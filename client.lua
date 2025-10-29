@@ -275,6 +275,10 @@ function client.openInventory(inv, data)
     left.items = PlayerData.inventory
     left.groups = PlayerData.groups
 
+	if left.type == 'player' then
+		left.playerId = cache.serverId
+	end
+    
     SendNUIMessage({
         action = 'setupInventory',
         data = {
